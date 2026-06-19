@@ -53,17 +53,13 @@ export function runMonteCarlo(
 
   for (let step = 0; step < MAX_STEPS; step++) {
     const rates = computeCollisionRates(state);
-    if (step === 0) {
-  console.log("STEP0 RATES", rates);
-}
+    
 
     const collisions = sampleCollisionCounts(
       rates,
       state.dt,
     );
-    if (step === 0) {
-      console.log("STEP0 COLLISIONS", collisions);
-    }
+    
 
     const fragmentation = applyFragmentation(
       state,

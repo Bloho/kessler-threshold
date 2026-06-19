@@ -44,9 +44,9 @@ export function runDensitySweep(): DensitySweepResult[] {
   const RUNS_PER_POINT = 50;
 
   for (
-    let densityMultiplier = 0.1;
-    densityMultiplier <= 5.0;
-    densityMultiplier += 0.2
+    let densityMultiplier = 0.01;
+    densityMultiplier <= 0.15;
+    densityMultiplier += 0.005
   ) {
     let cascades = 0;
 
