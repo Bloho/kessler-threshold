@@ -9,8 +9,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
+    "@types/node": "^25.9.3",
+    "@types/seedrandom": "^3.0.8",
     "csv-writer": "^1.6.0",
     "seedrandom": "^3.0.5",
     "simple-statistics": "^7.9.0",
