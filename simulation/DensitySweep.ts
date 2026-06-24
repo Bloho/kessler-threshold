@@ -41,12 +41,12 @@ function buildInitialState(
 export function runDensitySweep(): DensitySweepResult[] {
   const results: DensitySweepResult[] = [];
 
-  const RUNS_PER_POINT = 50;
+  const RUNS_PER_POINT = 200;
 
   for (
-    let densityMultiplier = 0.01;
-    densityMultiplier <= 0.15;
-    densityMultiplier += 0.005
+    let densityMultiplier = 0.085;
+    densityMultiplier <= 0.11;
+    densityMultiplier += 0.0025
   ) {
     let cascades = 0;
 
@@ -67,7 +67,7 @@ export function runDensitySweep(): DensitySweepResult[] {
 
     const row: DensitySweepResult = {
       densityMultiplier:
-        Number(densityMultiplier.toFixed(2)),
+        Number(densityMultiplier.toFixed(4)),
       runs: RUNS_PER_POINT,
       cascades,
       probability,
@@ -76,7 +76,7 @@ export function runDensitySweep(): DensitySweepResult[] {
     results.push(row);
 
     console.log(
-      `Density ${row.densityMultiplier.toFixed(2)} | ` +
+      `Density ${row.densityMultiplier.toFixed(4)} | ` +
       `${row.cascades}/${row.runs} cascades | ` +
       `P=${row.probability.toFixed(3)}`
     );
